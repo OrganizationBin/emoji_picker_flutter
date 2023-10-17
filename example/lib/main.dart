@@ -102,7 +102,7 @@ class MyAppState extends State<MyApp> {
                   height: 250,
                   child: EmojiPicker(
                     textEditingController: _controller,
-                    onBackspacePressed: _onBackspacePressed,
+                    // onBackspacePressed: _onBackspacePressed,
                     config: Config(
                       columns: 7,
                       // Issue: https://github.com/flutter/flutter/issues/28894
@@ -134,6 +134,15 @@ class MyAppState extends State<MyApp> {
                       loadingIndicator: const SizedBox.shrink(),
                       tabIndicatorAnimDuration: kTabScrollDuration,
                       categoryIcons: const CategoryIcons(),
+                      hideCategorys: [
+                        Category.ANIMALS,
+                        Category.FOODS,
+                        Category.TRAVEL,
+                        Category.ACTIVITIES,
+                        Category.OBJECTS,
+                        Category.SYMBOLS,
+                        Category.FLAGS,
+                      ],
                       buttonMode: ButtonMode.MATERIAL,
                       checkPlatformCompatibility: true,
                     ),
