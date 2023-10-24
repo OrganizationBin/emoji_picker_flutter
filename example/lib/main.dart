@@ -18,6 +18,8 @@ class MyAppState extends State<MyApp> {
   final TextEditingController _controller = TextEditingController();
   bool emojiShowing = false;
 
+  final primaryColor = Colors.blue;
+
   @override
   void dispose() {
     _controller.dispose();
@@ -44,7 +46,7 @@ class MyAppState extends State<MyApp> {
             const Spacer(),
             Container(
                 height: 66.0,
-                color: Colors.blue,
+                color: primaryColor,
                 child: Row(
                   children: [
                     Material(
@@ -104,9 +106,9 @@ class MyAppState extends State<MyApp> {
                     textEditingController: _controller,
                     // onBackspacePressed: _onBackspacePressed,
                     config: Config(
-                      columns: 7,
+                      columns: 8,
                       // Issue: https://github.com/flutter/flutter/issues/28894
-                      emojiSizeMax: 32 *
+                      emojiSizeMax: 24 *
                           (foundation.defaultTargetPlatform ==
                                   TargetPlatform.iOS
                               ? 1.30
@@ -116,10 +118,10 @@ class MyAppState extends State<MyApp> {
                       gridPadding: EdgeInsets.zero,
                       initCategory: Category.RECENT,
                       bgColor: const Color(0xFFF2F2F2),
-                      indicatorColor: Colors.blue,
+                      indicatorColor: primaryColor,
                       iconColor: Colors.grey,
-                      iconColorSelected: Colors.blue,
-                      backspaceColor: Colors.blue,
+                      iconColorSelected: primaryColor,
+                      backspaceColor: primaryColor,
                       skinToneDialogBgColor: Colors.white,
                       skinToneIndicatorColor: Colors.grey,
                       enableSkinTones: true,
@@ -130,6 +132,9 @@ class MyAppState extends State<MyApp> {
                         'No Recents',
                         style: TextStyle(fontSize: 20, color: Colors.black26),
                         textAlign: TextAlign.center,
+                      ),
+                      emojiTextStyle: TextStyle(
+                        fontSize: 10,
                       ),
                       loadingIndicator: const SizedBox.shrink(),
                       tabIndicatorAnimDuration: kTabScrollDuration,
@@ -145,6 +150,7 @@ class MyAppState extends State<MyApp> {
                       ],
                       buttonMode: ButtonMode.MATERIAL,
                       checkPlatformCompatibility: true,
+                      enableEmojiTip: true,
                     ),
                   )),
             ),

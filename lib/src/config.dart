@@ -31,6 +31,7 @@ class Config {
     this.skinToneDialogBgColor = Colors.white,
     this.skinToneIndicatorColor = Colors.grey,
     this.enableSkinTones = true,
+    this.enableEmojiTip = false,
     this.recentTabBehavior = RecentTabBehavior.RECENT,
     this.recentsLimit = 28,
     this.replaceEmojiOnLimitExceed = false,
@@ -85,6 +86,9 @@ class Config {
 
   /// Enable feature to select a skin tone of certain emoji's
   final bool enableSkinTones;
+
+  /// Enable emoji to bigger's tip
+  final bool enableEmojiTip;
 
   /// Behavior of Recent Tab (Recent, Popular)
   final RecentTabBehavior recentTabBehavior;

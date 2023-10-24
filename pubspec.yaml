@@ -36,3 +36,6 @@ flutter:
       web:
         pluginClass: EmojiPickerFlutterPluginWeb
         fileName: emoji_picker_flutter_web.dart
+
+  assets:
+    - assets/images/
